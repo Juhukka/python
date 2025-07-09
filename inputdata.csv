@@ -1,0 +1,11 @@
+Päivämäärä,Tositenumero,Tili,Tili_nimi,Selite,Debet,Kredit,Valuutta,Projekti,Dimensio
+2025-07-01,TOS-0001,3000,Myyntitulot,Tuotemyynti,0,1234.00,EUR,PRJ-001,Osasto 10
+2025-07-01,TOS-0001,1910,Rahatilit,Pankkitalletus,1234.00,0,EUR,PRJ-001,Osasto 10
+2025-07-02,TOS-0002,4000,Ostot,Ostolasku,2345.00,0,EUR,PRJ-002,Osasto 20
+2025-07-02,TOS-0002,2880,Ostovelat,Laskun kirjaus,0,2345.00,EUR,PRJ-002,Osasto 20
+2025-07-03,TOS-0003,3000,Myyntitulot,Palvelumyynti,0,3210.00,EUR,PRJ-003,Osasto 30
+2025-07-03,TOS-0003,1910,Rahatilit,Maksusuoritus,3210.00,0,EUR,PRJ-003,Osasto 30
+2025-07-04,TOS-0004,6100,Toimistokulut,Paperitarvikkeet,1100.00,0,EUR,PRJ-004,Osasto 40
+2025-07-04,TOS-0004,2880,Ostovelat,Osto kirjattu,0,1100.00,EUR,PRJ-004,Osasto 40
+2025-07-05,TOS-0005,3000,Myyntitulot,Palvelumyynti,0,4560.00,EUR,PRJ-005,Osasto 50
+2025-07-05,TOS-0005,1910,Rahatilit,Maksu saatu,4560.00,0,EUR,PRJ-005,Osasto 50
