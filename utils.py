@@ -27,6 +27,13 @@ def lue_csv_tiedosto_projekti(polkutiedosto, projekti, tuhaterotin=None, desimaa
     df = lue_csv_tiedosto(polkutiedosto, tuhaterotin, desimaalierotin)
     return df[df['Projekti'] == projekti]
 
+#luetaan vain sarake
+def luetaan_vain_sarake(df, sarakeNimi, arvo):
+    """Lue DataFrame ja suodata vain ne rivit, joissa sarakkeen arvo on tietty"""
+    tempdf = df[df[sarakeNimi] == arvo]
+    return tempdf
+
+
 # lisätään uusi sarake tauluun
 def lisaa_uusi_sarake(df, sarake_nimi, arvo):
     """Lisää uuden sarakkeen tauluun"""
@@ -64,3 +71,18 @@ def poista_sarake(df, sarake):
     else:
         print(f"Saraketta '{sarake}' ei löydy DataFrame:stä.")
     return df
+
+#tee dataframesta excel
+def tallenna_excel(df, tiedostonimi):
+    """Tallentaa DataFrame:n Excel-tiedostona"""
+    df.to_excel(tiedostonimi, index=False)
+
+#lisää exceli tiedostoon  5 riviä metatietoja
+def lisaa_metatiedot_excel(df, tiedostonimi):
+    """Lisää Excel-tiedostoon 5 riviä metatietoja"""
+    metatiedot = pd.DataFrame({
+        'Metatieto': ['Lähde', 'Päivämäärä', 'Versio', 'Tekijä', 'Kuvaus'],
+        'Arvo': ['Lähde 1', '2023-01-01', '1.0', 'Tekijä 1', 'Kuvaus 1']
+    })
+    with pd.ExcelWriter(tiedostonimi, engine='openpyxl', mode='a') as writer:
+        metatiedot.to_excel(writer, sheet_name='Metatiedot', index=False)
